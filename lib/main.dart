@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'notif.dart';
 import 'cards.dart';
 
 void main() => runApp(MyApp());
@@ -35,10 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {},
           ),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.notifications),
-              onPressed: () {},
-            ),
+           Notif(),
             IconButton(
               icon: Icon(Icons.search),
               onPressed: () {},
@@ -51,10 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(
           children: <Widget>[
            
-            Padding(
-              padding: EdgeInsets.only(top: 10.0),
-              child: Placard("Hawaii   to   Sevilla", "29th Sept 2019", "Emirates Airways"),
-            ),
+            Placard("Hawaii   to   Sevilla", "29th Sept 2019", "Emirates Airways"),
             Placard("Manipal  to   Goa", "20th Sept 2019", "Thivim Rails"),
             Placard("Sevilla  to   Morroco", "30th Sept 2019", "Emirates Airways")
           ],
