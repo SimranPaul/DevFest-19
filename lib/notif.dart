@@ -15,32 +15,32 @@ class _NotifState extends State<Notif> {
             ? Icon(Icons.notifications_active)
             : Icon(Icons.notifications_off),
         onPressed: () {
-          setState(() {
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text(status
-                        ? "Turn On Notifications?"
-                        : "Turn Off Notifications?"),
-                    actions: <Widget>[
-                      FlatButton(
-                        child: Text("YES"),
-                        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text(status
+                      ? "Turn Off Notifications?"
+                      : "Turn On Notifications?"),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text("YES"),
+                      onPressed: () {
+                        setState(() {
                           status = !status;
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                      FlatButton(
-                        child: Text("NO"),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                });
-          });
+                        });
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    FlatButton(
+                      child: Text("NO"),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ],
+                );
+              });
         });
   }
 }
